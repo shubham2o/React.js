@@ -1,8 +1,13 @@
+import React from 'react';
 import Card from "./Components/Card";
+import Random from "./Components/Random";
 
 function App() {
   return (
-    <Card />
+    <React.StrictMode>
+      <Card />
+      <Random />
+    </React.StrictMode>
   )
 }
 
