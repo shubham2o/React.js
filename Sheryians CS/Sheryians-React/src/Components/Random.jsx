@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Division from "./Divison";
 import Button from "./Button";
 
 const Random = () => {
@@ -20,110 +21,157 @@ const Random = () => {
 
     return (
         <div className="text-lg font-bold bg-zinc-700 p-4">
-            <div className="bg-teal-500 mb-10 p-4 rounded-3xl">
-                {data.map((value, key) => (
+            <Division
+                bgColor="bg-teal-500"
+                content={data.map((value, key) => (
                     <div key={key}>
                         <h1>{value}</h1>
                         <p>{key + 1}</p>
                     </div>
                 ))}
-            </div>
+            />
 
-            <div className="bg-purple-400 mb-10 p-4 rounded-3xl">
-                <h1>{score}</h1>
+            <Division
+                bgColor="bg-purple-400"
+                content={
+                    <>
+                        <h1>{score}</h1>
 
-                <Button
-                    text="Add + 1"
-                    onClick={() => setScore(prev => prev + 1)}
-                />
-            </div>
+                        <Button
+                            text="Add + 1"
+                            color="bg-zinc-700"
+                            onClick={() => setScore(prev => prev + 1)}
+                        />
+                    </>
+                }
+            />
 
-            <div className="bg-red-400 mb-10 p-4 rounded-3xl">
-                <h1>{val.name} : {val.isBanned.toString()}</h1>
+            <Division
+                bgColor="bg-red-400"
+                content={
+                    <>
+                        <h1>{val.name} : {val.isBanned.toString()}</h1>
 
-                <button
-                    className={`text-white mt-3 px-4 py-2 text-base rounded-full ${val.isBanned ? "bg-blue-700" : "bg-red-700"}`}
-                    onClick={() => setVal({ ...val, isBanned: !val.isBanned })}
-                >
-                    Click to Change
-                </button>
-            </div>
+                        <Button
+                            text="Click to change"
+                            color={val.isBanned ? "bg-blue-700" : "bg-red-700"}
+                            onClick={() => setVal({ ...val, isBanned: !val.isBanned })}
+                        />
+                    </>
+                }
+            />
 
-            <div className="bg-amber-400 mb-10 p-4 rounded-3xl">
-                <h1>{`${item.name} : ${item.number} ${item.team ? `: ${item.team}` : ""}`}</h1>
+            <Division
+                bgColor="bg-amber-400"
+                content={
+                    <>
+                        <h1>{`${item.name} : ${item.number} ${item.team ? `: ${item.team}` : ""}`}</h1>
 
-                <Button
-                    text="Click to add"
-                    onClick={() => setItem({ ...item, team: "Los Angeles Lakers" })}
-                />
-            </div>
+                        <Button
+                            text="Click to add"
+                            color="bg-zinc-700"
+                            onClick={() => setItem({ ...item, team: "Los Angeles Lakers" })}
+                        />
+                    </>
+                }
+            />
 
-            <div className="bg-lime-400 mb-10 p-4 rounded-3xl">
-                <h1>{`${num}`}</h1>
+            <Division
+                bgColor="bg-lime-400"
+                content={
+                    <>
+                        <h1>{`${num}`}</h1>
 
-                <Button
-                    text="Remove from last"
-                    onClick={() =>
-                        setNum(prev =>
-                            prev.filter((value, index) =>
-                                index !== prev.length - 1
-                            )
-                        )
-                    }
-                />
-            </div>
+                        <Button
+                            text="Remove from last"
+                            color="bg-zinc-700"
+                            onClick={() =>
+                                setNum(prev =>
+                                    prev.filter((value, index) =>
+                                        index !== prev.length - 1
+                                    )
+                                )
+                            }
+                        />
+                    </>
+                }
+            />
 
-            <div className="bg-cyan-300 mb-10 p-4 rounded-3xl">
-                {rem.map((value, index) => (
-                    <h1 key={index}>{value}</h1>
-                ))}
+            <Division
+                bgColor="bg-cyan-300"
+                content={
+                    <>
+                        {rem.map((value, index) => (
+                            <h1 key={index}>{value}</h1>
+                        ))}
 
-                <Button
-                    text="Remove from middle"
-                    onClick={() =>
-                        setRem(prev => {
-                            return prev.filter((value, index) =>
-                                index !== 2
-                            )
-                        })
-                    }
-                />
-            </div>
+                        <Button
+                            text="Remove from middle"
+                            color="bg-zinc-700"
+                            onClick={() =>
+                                setRem(prev => {
+                                    return prev.filter((value, index) =>
+                                        index !== 2
+                                    )
+                                })
+                            }
+                        />
+                    </>
+                }
+            />
 
-            <div className="bg-teal-500 mb-10 p-4 rounded-3xl">
-                <h1>{`${divByTwo}`}</h1>
+            <Division
+                bgColor="bg-teal-500"
+                content={
+                    <>
+                        <h1>{`${divByTwo}`}</h1>
 
-                <Button
-                    text="Remove even numbers"
-                    onClick={() => setDivByTwo(prev => prev.filter(value => value % 2 !== 0))}
-                />
-            </div>
+                        <Button
+                            text="Remove even numbers"
+                            color="bg-zinc-700"
+                            onClick={() => setDivByTwo(prev => prev.filter(value => value % 2 !== 0))}
+                        />
+                    </>
+                }
+            />
 
-            <div className="bg-purple-400 mb-10 p-4 rounded-3xl">
-                <h1>{`${addInArr}`}</h1>
+            <Division
+                bgColor="bg-purple-400"
+                content={
+                    <>
+                        <h1>{`${addInArr}`}</h1>
 
-                <Button
-                    text="Add in last"
-                    onClick={() => setAddInArr([...addInArr, Math.floor(Math.random() * 10) + 1])}
-                />
-            </div>
+                        <Button
+                            text="Add in last"
+                            color="bg-zinc-700"
+                            onClick={() => setAddInArr([...addInArr, Math.floor(Math.random() * 10) + 1])}
+                        />
+                    </>
+                }
+            />
 
-            <div className="bg-red-400 mb-10 p-4 rounded-3xl">
-                {info.map((value, index) => (
-                    <h1 key={index}>{value.name} : {value.number}</h1>
-                ))}
+            <Division
+                bgColor="bg-red-400"
+                content={
+                    <>
+                        {info.map((value, index) => (
+                            <h1 key={index}>{value.name} : {value.number}</h1>
+                        ))}
 
-                <Button
-                    text="Update value"
-                    onClick={() =>
-                        setInfo(prev =>
-                            prev.map(value =>
-                                value.number === 11 ? { ...value, number: 31 } : value
-                            )
-                        )
-                    }
-                />
-            </div>
+                        <Button
+                            text="Update value"
+                            color="bg-zinc-700"
+                            onClick={() =>
+                                setInfo(prev =>
+                                    prev.map(value =>
+                                        value.number === 11 ? { ...value, number: 31 } : value
+                                    )
+                                )
+                            }
+                        />
+                    </>
+                }
+            />
 
             <div className="bg-amber-400 mb-10 p-4 rounded-3xl flex justify-center items-center">
                 <div className="relative w-60 h-32 bg-zinc-700 rounded-xl flex overflow-hidden">
