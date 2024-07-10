@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
+import Button from "./Button";
 
 const Random = () => {
     const data = ["Shubham", "Aman", "Stephen", "Virat"];
@@ -30,16 +31,16 @@ const Random = () => {
 
             <div className="bg-purple-400 mb-10 p-4 rounded-3xl">
                 <h1>{score}</h1>
-                <button
-                    className="bg-zinc-700 text-white mt-3 px-4 py-2 text-base rounded-full"
+
+                <Button
+                    text="Add + 1"
                     onClick={() => setScore(prev => prev + 1)}
-                >
-                    Add + 1
-                </button>
+                />
             </div>
 
             <div className="bg-red-400 mb-10 p-4 rounded-3xl">
                 <h1>{val.name} : {val.isBanned.toString()}</h1>
+
                 <button
                     className={`text-white mt-3 px-4 py-2 text-base rounded-full ${val.isBanned ? "bg-blue-700" : "bg-red-700"}`}
                     onClick={() => setVal({ ...val, isBanned: !val.isBanned })}
@@ -50,23 +51,26 @@ const Random = () => {
 
             <div className="bg-amber-400 mb-10 p-4 rounded-3xl">
                 <h1>{`${item.name} : ${item.number} ${item.team ? `: ${item.team}` : ""}`}</h1>
-                <button
-                    className="bg-zinc-700 text-white mt-3 px-4 py-2 text-base rounded-full"
+
+                <Button
+                    text="Click to add"
                     onClick={() => setItem({ ...item, team: "Los Angeles Lakers" })}
-                >
-                    Click to add
-                </button>
+                />
             </div>
 
             <div className="bg-lime-400 mb-10 p-4 rounded-3xl">
                 <h1>{`${num}`}</h1>
 
-                <button
-                    className="bg-zinc-700 text-white mt-3 px-4 py-2 text-base rounded-full"
-                    onClick={() => setNum(prev => prev.filter((value, index) => index !== prev.length - 1))}
-                >
-                    Remove from last
-                </button>
+                <Button
+                    text="Remove from last"
+                    onClick={() =>
+                        setNum(prev =>
+                            prev.filter((value, index) =>
+                                index !== prev.length - 1
+                            )
+                        )
+                    }
+                />
             </div>
 
             <div className="bg-cyan-300 mb-10 p-4 rounded-3xl">
@@ -74,36 +78,34 @@ const Random = () => {
                     <h1 key={index}>{value}</h1>
                 ))}
 
-                <button
-                    className="bg-zinc-700 text-white mt-3 px-4 py-2 text-base rounded-full"
-                    onClick={() => setRem(prev => {
-                        return prev.filter((value, index) => index !== 2)
-                    })}
-                >
-                    Remove from middle
-                </button>
+                <Button
+                    text="Remove from middle"
+                    onClick={() =>
+                        setRem(prev => {
+                            return prev.filter((value, index) =>
+                                index !== 2
+                            )
+                        })
+                    }
+                />
             </div>
 
             <div className="bg-teal-500 mb-10 p-4 rounded-3xl">
                 <h1>{`${divByTwo}`}</h1>
 
-                <button
-                    className="bg-zinc-700 text-white mt-3 px-4 py-2 text-base rounded-full"
+                <Button
+                    text="Remove even numbers"
                     onClick={() => setDivByTwo(prev => prev.filter(value => value % 2 !== 0))}
-                >
-                    Remove even numbers
-                </button>
+                />
             </div>
 
             <div className="bg-purple-400 mb-10 p-4 rounded-3xl">
                 <h1>{`${addInArr}`}</h1>
 
-                <button
-                    className="bg-zinc-700 text-white mt-3 px-4 py-2 text-base rounded-full"
+                <Button
+                    text="Add in last"
                     onClick={() => setAddInArr([...addInArr, Math.floor(Math.random() * 10) + 1])}
-                >
-                    Add in last
-                </button>
+                />
             </div>
 
             <div className="bg-red-400 mb-10 p-4 rounded-3xl">
@@ -111,8 +113,8 @@ const Random = () => {
                     <h1 key={index}>{value.name} : {value.number}</h1>
                 ))}
 
-                <button
-                    className="bg-zinc-700 text-white mt-3 px-4 py-2 text-base rounded-full"
+                <Button
+                    text="Update value"
                     onClick={() =>
                         setInfo(prev =>
                             prev.map(value =>
@@ -120,9 +122,7 @@ const Random = () => {
                             )
                         )
                     }
-                >
-                    Update value
-                </button>
+                />
             </div>
 
             <div className="bg-amber-400 mb-10 p-4 rounded-3xl flex justify-center items-center">
