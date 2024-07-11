@@ -20,7 +20,7 @@ const Random = () => {
     const [img, setImg] = useState(false);
 
     return (
-        <div className="text-lg font-bold bg-zinc-700 p-4">
+        <div className="text-lg font-bold p-4">
             <Division
                 bgColor="bg-teal-500"
                 content={data.map((value, key) => (

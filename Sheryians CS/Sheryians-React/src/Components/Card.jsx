@@ -21,7 +21,7 @@ const Card = () => {
     ];
 
     return (
-        <div className="w-full h-screen bg-zinc-700 flex items-center justify-center gap-10">
+        <div className="w-full h-screen flex items-center justify-center gap-10">
             {data.map((elem, index) => (
                 <div
                     key={index}
