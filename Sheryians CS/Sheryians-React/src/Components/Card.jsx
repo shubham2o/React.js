@@ -34,13 +34,16 @@ const Card = () => {
                             className="w-full h-full object-cover rounded-t-xl"
                         />
                     </div>
+
                     <div className="w-full px-3 py-4">
                         <h2 className="font-semibold">
                             {elem.name}
                         </h2>
+
                         <p className="text-xs mt-3">
                             {elem.description}
                         </p>
+
                         <button
                             className={`mt-3 px-2 py-1 text-xs rounded text-zinc-100 ${elem.instock ? 'bg-blue-600' : 'bg-red-600'}`}
                             onClick={() => alert(`${elem.instock ? 'in stock' : 'out of stock'}`)}
