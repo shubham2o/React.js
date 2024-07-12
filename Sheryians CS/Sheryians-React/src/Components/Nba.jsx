@@ -3,9 +3,9 @@ const Nba = ({ values, handleClick, index }) => {
 
     return (
         <div className="w-52 bg-white rounded-xl overflow-hidden">
-            <div className="w-full h-32 bg-sky-200">
+            <div className="w-full h-48 rounded-t-xl bg-blue-200">
                 <img
-                    className="w-full h-full object-cover object-top"
+                    className="w-full h-full object-cover object-top pt-2"
                     src={image}
                 />
             </div>
