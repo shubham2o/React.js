@@ -88,6 +88,17 @@ const App = () => {
 
   const [realPlaylistData, setRealPlaylistData] = useState(playlistData);
 
+  const handleFavouriteButton = (songCardIndex) => {
+    setRealPlaylistData(previous => {
+      return previous.map((value, index) => {
+        if (index === songCardIndex) {
+          return { ...value, added: !value.added }
+        }
+        return value;
+      })
+    })
+  }
+
   return (
     <React.StrictMode>
       <div className="w-full h-full bg-zinc-700">
@@ -107,13 +118,15 @@ const App = () => {
         </div>
 
         <div className="w-full py-20 border-b-2 border-dotted border-zinc-600 tracking-wide">
-          <Navbar />
+          <Navbar data={realPlaylistData} />
 
           <div className="px-12 py-8 flex flex-wrap gap-10">
             {realPlaylistData.map((item, index) => (
               <Playlist
                 key={index}
                 values={item}
+                songIndex={index}
+                handleFavBtn={handleFavouriteButton}
               />
             ))}
           </div>
