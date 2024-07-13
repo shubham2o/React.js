@@ -1,6 +1,9 @@
 import { useRef, useState } from "react";
 
 const Forms = () => {
+    const [data, setData] = useState(" ");
+    const [name, setName] = useState({ fullName: "" });
+
     const firstName = useRef(null);
     const lastName = useRef(null);
 
@@ -8,15 +11,17 @@ const Forms = () => {
         event.preventDefault();
     }
 
-    const [data, setData] = useState(" ");
-
     return (
         <div>
             <form
                 action=""
-                className="pt-20 pb-20 font-bold text-center"
+                className="py-14 font-bold text-center"
                 onSubmit={handleSubmit}
             >
+                <h1 className="mb-10 text-lime-400 underline text-2xl">
+                    useRef()
+                </h1>
+
                 <input
                     type="text"
                     placeholder="First Name"
@@ -40,8 +45,31 @@ const Forms = () => {
                 />
 
                 <div className="flex justify-center items-center">
-                    <div className="w-72 h-10 flex justify-center items-center bg-green-300">
+                    <div className="w-72 h-10 flex justify-center items-center bg-lime-300">
                         {data}
+                    </div>
+                </div>
+            </form>
+
+            <form
+                action=""
+                className="py-14 font-bold text-center"
+                onSubmit={handleSubmit}
+            >
+                <h1 className="mb-10 text-purple-400 underline text-2xl">
+                    Controlled Components - useState()
+                </h1>
+
+                <input
+                    type="text"
+                    placeholder="Full Name"
+                    className="w-52 h-10 mx-4 mb-8 rounded-3xl px-4"
+                    onChange={event => setName({ ...name, fullName: event.target.value })}
+                />
+
+                <div className="flex justify-center items-center">
+                    <div className="w-72 h-10 flex justify-center items-center bg-purple-300">
+                        {name.fullName}
                     </div>
                 </div>
             </form>

@@ -134,6 +134,10 @@ const App = () => {
         </div>
 
         <div className="border-b-2 border-dotted border-zinc-600">
+          <h1 className="mt-10 ml-10 text-2xl text-blue-500 font-bold underline">
+            Form Handling in React.js
+          </h1>
+
           <Forms />
         </div>
       </div>
