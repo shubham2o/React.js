@@ -1,0 +1,11 @@
+.div {
+  margin-bottom: 40px;
+  border-radius: 24px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: double underline;
+}
+
+.color {
+  background-color: #ace70be0;
+}

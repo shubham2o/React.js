@@ -1,3 +1,4 @@
+import styles from "./style.module.css";
 import { useState } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import Division from "./Divison";
@@ -21,6 +22,10 @@ const Random = () => {
 
     return (
         <div className="text-lg font-bold p-4">
+            <div className={`${styles.div} ${styles.color}`}>
+                This DIV is made and styled using CSS Module. (style.module.css)
+            </div>
+
             <Division
                 bgColor="bg-teal-500"
                 content={data.map((value, key) => (

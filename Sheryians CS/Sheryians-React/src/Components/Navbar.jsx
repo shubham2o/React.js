@@ -7,7 +7,7 @@ const Navbar = ({ data }) => {
                 <h3 className="pt-0.5">Favourites</h3>
 
                 <h4
-                    className="px-1.5 pt-[2px] pb-[1.5px] bg-black rounded-full text-xs"
+                    className="px-1.5 pt-[.15vw] pb-[1.5px] bg-black rounded-full text-xs"
                 >
                     {data.filter(item => item.added).length}
                 </h4>
