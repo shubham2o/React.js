@@ -5,6 +5,7 @@ import Nba from "./Components/Nba";
 import Navbar from "./Components/Navbar";
 import Playlist from "./Components/Playlist";
 import { useState } from 'react';
+import Forms from "./Components/Forms";
 
 const App = () => {
   const data = [
@@ -130,6 +131,10 @@ const App = () => {
               />
             ))}
           </div>
+        </div>
+
+        <div className="border-b-2 border-dotted border-zinc-600">
+          <Forms />
         </div>
       </div>
     </React.StrictMode>
