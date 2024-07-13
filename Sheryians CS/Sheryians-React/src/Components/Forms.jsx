@@ -111,7 +111,7 @@ const Forms = () => {
                     </div>
                 </div>
             </form>
-        </div >
+        </div>
     )
 }
 
