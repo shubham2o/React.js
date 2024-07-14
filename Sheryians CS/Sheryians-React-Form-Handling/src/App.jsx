@@ -1,12 +1,14 @@
-import { useState } from 'react'
+import Cards from "./components/Cards";
+import Form from "./components/Form";
 
-function App() {
-  const [count, setCount] = useState(0)
-
+const App = () => {
   return (
-    <>
-      <h1>Vite + React</h1>
-    </>
+    <div className="w-full h-screen bg-zinc-800 flex justify-center items-center">
+      <div className="container mx-auto">
+        <Cards />
+        <Form />
+      </div>
+    </div>
   )
 }
 
