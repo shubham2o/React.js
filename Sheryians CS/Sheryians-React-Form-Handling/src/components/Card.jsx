@@ -2,7 +2,7 @@ const Card = ({ user, handleRemoveBtn, userId }) => {
     const { name, email, image } = user;
 
     return (
-        <div className="w-52 h-full rounded-lg p-2.5 bg-zinc-100 flex flex-col items-center">
+        <div className="w-52 h-full rounded-lg p-2.5 bg-zinc-100 text-center flex flex-col items-center">
             <div className="w-[5vw] h-[5vw] rounded-full bg-zinc-400 overflow-hidden">
                 <img
                     src={image}
@@ -10,11 +10,11 @@ const Card = ({ user, handleRemoveBtn, userId }) => {
                 />
             </div>
 
-            <h1 className="mt-2 text-xl font-semibold">
+            <h1 className="mt-2 text-xl font-semibold leading-none">
                 {name}
             </h1>
 
-            <h4 className="opacity-70 text-xs font-semibold">
+            <h4 className="mt-1 opacity-70 text-xs font-semibold">
                 {email}
             </h4>
 
