@@ -13,14 +13,14 @@ const Nav = () => {
             </NavLink>
 
             <NavLink
-                to="/User"
+                to="/user"
                 style={isActiveStyle}
             >
                 User
             </NavLink>
 
             <NavLink
-                to="/About"
+                to="/about"
                 style={isActiveStyle}
             >
                 About

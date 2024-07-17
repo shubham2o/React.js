@@ -1,8 +1,8 @@
 const Home = () => {
     return (
-        <div className="w-full h-screen pt-10 text-center bg-red-900">
+        <div className="w-full h-screen pt-10 text-center bg-red-900 tracking-wide">
             <h1 className="text-2xl underline underline-offset-8">
-                Home Component
+                Home
             </h1>
 
             <p className="mt-5">
