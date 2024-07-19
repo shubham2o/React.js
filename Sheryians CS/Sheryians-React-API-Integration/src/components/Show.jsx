@@ -47,7 +47,7 @@ const Show = () => {
                     return (
                         <ul
                             key={index}
-                            className="w-full border-solid border-b-4 border-sky-600 px-10 py-6 flex flex-col gap-6"
+                            className="w-full border-solid border-b-4 border-sky-600 px-5 py-6 flex flex-col gap-6"
                         >
                             <li className="flex flex-col gap-1">
                                 <span className="text-yellow-400 font-bold">
