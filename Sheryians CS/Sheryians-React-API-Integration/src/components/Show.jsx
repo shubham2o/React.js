@@ -1,20 +1,19 @@
-import { useState } from "react";
-import axios from "axios";
+import { useEffect, useState } from "react";
+import axios from "../utils/axios";
 
 const Show = () => {
-    const api = "https://fakestoreapi.com/products";
     const [products, setProducts] = useState([]);
 
     const getProducts = () => {
         axios
-            .get(api)
+            .get("/products")
             .then(products => setProducts(products.data))
             .catch(err => console.log(err.message))
     }
 
     const addProducts = () => {
         axios
-            .post(api, {
+            .post("/products", {
                 title: 'test product',
                 price: 13.5,
                 description: 'lorem ipsum set',
@@ -25,15 +24,12 @@ const Show = () => {
             .catch(err => console.log(err))
     }
 
+    useEffect(() => {
+        getProducts();
+    }, []);
+
     return (
         <div className="bg-zinc-800">
-            <button
-                className="m-10 rounded-2xl px-4 py-1 bg-blue-500 text-white text-lg font-semibold"
-                onClick={() => getProducts()}
-            >
-                Get Products Details
-            </button>
-
             <button
                 className="m-10 rounded-2xl px-4 py-1 bg-blue-500 text-white text-lg font-semibold"
                 onClick={() => addProducts()}
@@ -73,7 +69,7 @@ const Show = () => {
                                 ${item.price}
                             </li>
 
-                            <li className="flex flex-col flex-wrap gap-1">
+                            <li className="flex flex-col flex-wrap">
                                 <span className="text-yellow-400 font-bold">
                                     Description :
                                 </span>
@@ -99,7 +95,7 @@ const Show = () => {
                     )
                 })
                 :
-                <h1 className="px-10 py-6 tracking-wider">
+                <h1 className="text-center tracking-wider text-xl">
                     {`Loading...`}
                 </h1>
             }
