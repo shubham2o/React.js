@@ -103,7 +103,7 @@ const Show = () => {
                     {`Loading...`}
                 </h1>
             }
-        </div>
+        </div >
     )
 }
 
